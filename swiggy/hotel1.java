@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 public class hotel1 {
+	static String[] get;
 	public  void hot() throws FileNotFoundException, IOException, InterruptedException{
 		excel h=new excel();
 		String[] hotel = { "nethra", "alifha", "saravanabavan", "hukeem", "kannappa", "thai-hotel", "raja-kafe" };
@@ -19,17 +20,27 @@ public class hotel1 {
 		System.out.println("please Enter Hotel:");
 		String input=user.next();
 		//get excel cell value from excel file like arraylist
-		String[] get= h.receive();
-			
+		try {
+		 get= h.recevie();
 		List ge=Arrays.asList(get);
+		if(ge.contains(input)) {
+				 System.out.println("================================================================================================================");
+				 System.out.println(input+" "+"hotel is available");
+				 items.item();
+		}
+		else {System.out.println(" 'Hotel Is Unavailable'");}
+		}catch(Exception e) {
+			System.out.println("Sorry Unable to find hotel.");
+			
+		}
 		  //get array value one by one 
-		for(String hot:get) {
-			if( hot.equalsIgnoreCase(input)) {			
+		/*for(String hot:get) {
+			if( hot.equalsIgnoreCase(input)) {	
 			 System.out.println("================================================================================================================");
 			 System.out.println(hot+" "+"hotel is available");
 			 break;
 			}
-		}
+		}*/
 	} 
 	}
 

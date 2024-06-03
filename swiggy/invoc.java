@@ -1,7 +1,9 @@
 package swiggy;
  import java.io.FileNotFoundException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Map;
 import java.io.IOException;
 import java.util.Scanner;
@@ -12,6 +14,7 @@ public  class  invoc extends items{
     	int get1=0;
     	excel h=new excel();
   		String[] get=h.receiveRate();
+  		List s=Arrays.asList(get);
   		Map<String,Integer> h1=new HashMap<>();
 		h1.put("chicken65",80);
   	    h1.put("chicken-rice",130);
@@ -30,12 +33,12 @@ public  class  invoc extends items{
   					break;
   				 }
   			 }
+  	        }
   			 }
-  			}
     	Scanner inv=new Scanner(System.in);
          LocalDate d=LocalDate.now();
     	try{	
-    switch(items.input){
+    switch(items.input.toUpperCase()){
         case "CHICKEN65":
             int gram=0;
             try{
@@ -168,6 +171,7 @@ public  class  invoc extends items{
       catch(NumberFormatException e){
         System.out.println("\n\"You Click Wrong Option\"\n");
         }
+  	
     }
     public static void tax()throws  FileNotFoundException,IOException{
         try{

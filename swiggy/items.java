@@ -20,5 +20,6 @@ public class items extends hotel1{
          System.out.println("Enter what would you life have:"); 
   		  input=user.next().toUpperCase();
   		//get excel cell value from excel file like arraylist
+	
 	}
 }
